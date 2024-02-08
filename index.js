@@ -3,10 +3,6 @@ const app = express()
 
 const array = []
 
-app.all('/', (req, res) => {
-    res.status(200).send('Online!').end()
-})
-
 app.post('/', (req, res) => {
     array.push(req.body)
     res.status(200).json({ message: "Usuario Cadastrado!"}).end()

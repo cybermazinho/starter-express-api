@@ -10,7 +10,8 @@ app.post('/', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.status(201).json(array).end()
+    const json = JSON.stringify(array)
+    res.status(201).json(json).end()
 
 })
 

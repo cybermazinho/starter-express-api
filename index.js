@@ -7,14 +7,12 @@ app.use(express.json())
 
 app.post('/', (req, res) => {
     array.push(req.body)
-    res.status(200).json({ message: "Usuario Cadastrado!"}).end()
+    res.status(201).json({ message: "Usuario Cadastrado!"}).end()
 
 })
 
 app.get('/', (req, res) => {
-    const json = JSON.stringify(array)
-    res.status(201).json(json).end()
-
+    res.status(200).json(array).end()
 })
 
 

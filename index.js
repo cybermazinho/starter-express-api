@@ -12,8 +12,17 @@ app.post('/', (req, res) => {
 })
 
 app.get('/', (req, res) => {
+    console.log(array)
     res.status(200).json(array).end()
 })
 
+app.patch('/', (req, res) => {
+    array.forEach(item => {
+        if(item.name === req.body.name){
+            item.age = req.body.age
+        }
+    })
+    res.status(200).json(array).end()
+})
 
 app.listen(process.env.PORT || 3000)        

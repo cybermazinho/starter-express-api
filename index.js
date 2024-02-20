@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
+const cors = require('cors');
 
 const array = []
 
+app.use(cors());
 app.use(express.json())
+
 
 app.post('/', (req, res) => {
     array.push(req.body)
@@ -22,7 +25,7 @@ app.patch('/', (req, res) => {
             item.age = req.body.age
         }
     })
-    res.status(200).json(array).end()
+    res.status(201).json(array).end()
 })
 
 app.listen(process.env.PORT || 3000)        
